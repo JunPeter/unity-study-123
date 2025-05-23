@@ -14,16 +14,21 @@ public class Movement : MonoBehaviour
 
 
         // 부드럽게 증감하는 값
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
-        
+        //float h = Input.GetAxis("Horizontal");
+        //float v = Input.GetAxis("Vertical");
+
         // 딱 떨어지는 값
-        //float h = Input.GetAxisRaw("Horizontal");
-        //float v = Input.GetAxisRaw("Vertical");
+        float h = Input.GetAxisRaw("Horizontal");
+        float v = Input.GetAxisRaw("Vertical");
 
         Vector3 dir = new Vector3(h, 0, v);
-        Debug.Log($"현재 입력 : {dir}");
 
-        transform.position += dir * moveSpeed * Time.deltaTime;
+        Vector3 normalDir = dir.normalized; // 정규화 과정(0 ~ 1) 
+
+        Debug.Log($"현재 입력 : {normalDir}");
+
+        transform.position += normalDir * moveSpeed * Time.deltaTime;
+
+        transform.LookAt(transform.position + normalDir);
     }
 }
