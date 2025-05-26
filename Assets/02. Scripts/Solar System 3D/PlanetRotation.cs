@@ -9,6 +9,7 @@ public class PlanetRotation : MonoBehaviour
     public float revolutionSpeed = 100f;
 
     public bool isRevolution = false;
+    
 
 
     void Update()
