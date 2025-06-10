@@ -1,13 +1,14 @@
-using System;
 using UnityEngine;
 
 public class ColliderEvent : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D other)
+    public GameObject fadeUI;
+
+    public void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Game Over");
+            fadeUI.SetActive(true);
         }
     }
 }

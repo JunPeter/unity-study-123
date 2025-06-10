@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+  - Score10
+  - Score 30
+  - Score 50
+  - Cherries
   layers:
   - Default
   - TransparentFX

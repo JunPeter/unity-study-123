@@ -8,13 +8,20 @@ public class Transform_LoopMap : MonoBehaviour
 
     public Vector3 returnPos;
 
+    private void Start()
+    {
+        randomPosY = Random.Range(-8f, -5.2f);
+
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
+    }
     void Update()
     {
         transform.position += Vector3.left * moveSpeed * Time.deltaTime;
 
         if (transform.position.x <= -returnPosX)
         {
-            randomPosY = Random.Range(-8f, -4f);
+            randomPosY = Random.Range(-8f, -5.2f);
+
             transform.position = new Vector3(returnPosX, randomPosY, 0);
         }
     }
